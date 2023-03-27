@@ -1,4 +1,5 @@
 {
+  "proxy":"https://expense-tracker-ykms.onrender.com/api/v1",
   "name": "my-expense-tracker-frontend",
   "version": "0.1.0",
   "private": true,
