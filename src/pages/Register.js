@@ -10,7 +10,7 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:8080/api/v1/users/register", values);
+      await axios.post(`${process.env.REACT_APP_BACKEND_API_BASE_URL}/api/v1/users/register`, values);
       message.success("Registeration Successfull");
       setLoading(false);
       navigate("/login");
