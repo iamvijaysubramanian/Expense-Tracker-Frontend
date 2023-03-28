@@ -75,7 +75,7 @@ const HomePage = () => {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
         setLoading(true);
-        const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/transections/get-transection`, {
+        const res = await axios.post(`${process.env.REACT_APP_.BASE_URL}/transections/get-transection`, {
           userid: user._id,
           frequency,
           selectedDate,
@@ -96,7 +96,7 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post(`${process.env.REACT_APP_BASE_URL}/transections/delete-transection`, {
+      await axios.post(`${process.env.REACT_APP_.BASE_URL}/transections/delete-transection`, {
         transacationId: record._id,
       });
       setLoading(false);
@@ -114,7 +114,7 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (editable) {
-        await axios.post(`${process.env.REACT_APP_BASE_URL}/transections/edit-transection`, {
+        await axios.post(`${process.env.REACT_APP_.BASE_URL}/transections/edit-transection`, {
           payload: {
             ...values,
             userId: user._id,
@@ -124,7 +124,7 @@ const HomePage = () => {
         setLoading(false);
         message.success("Transaction Updated Successfully");
       } else {
-        await axios.post(`${process.env.REACT_APP_BASE_URL}/transections/add-transection`, {
+        await axios.post(`${process.env.REACT_APP_.BASE_URL}/transections/add-transection`, {
           ...values,
           userid: user._id,
         });
